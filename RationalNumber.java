@@ -42,11 +42,11 @@ public class RationalNumber extends RealNumber {
 
   public static int gcd(int a, int b) {
     if (a < b) {
-      int tempValue = b;
+      double tempValue = b;
       b = a;
       a = b;
     }
-    int remainders = a / b;
+    double remainders = a / b;
     for (int i = 0; remainders == 0; i++) {
       a = b;
       b = remainders;
@@ -73,5 +73,21 @@ public class RationalNumber extends RealNumber {
     numerator = numerator * other.getDenominator();
     denominator = denominator * other.getNumerator();
     return (numerator / denominator);
+  }
+
+  public RationalNumber add(RationalNumber other) {
+    if (denominator == other.getDenominator) {
+      numerator += other.getNumerator();
+    } else {
+      double leastMultiple = (multiply(other)) / gcd((numerator/denominator), other);
+      double firstRational = leastMultiple / (numerator/denominator);
+      double secondRational = other / (numerator/denominator);
+      numerator = numerator * firstRational;
+      denominator = denominator * firstRational;
+      other.getNumerator() = other.getNumerator() * secondRational;
+      other.denominator()) = other.getDenominator() * secondRational;
+      numerator = numerator + other.getNumerator;
+    }
+    return (numerator/denominator;)
   }
 }
