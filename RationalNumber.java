@@ -35,4 +35,8 @@ public class RationalNumber extends RealNumber {
       return false;
     }
   }
+
+  public String toString() {
+    return "" + numerator + "/" + denominator;
+  }
 }
