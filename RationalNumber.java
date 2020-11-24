@@ -27,4 +27,12 @@ public class RationalNumber extends RealNumber {
   public RationalNumber reciprocal() {
     return (denominator / numerator);
   }
+
+  public boolean equals(RationalNumber other) {
+    if (numerator.equals(denominator)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
