@@ -16,34 +16,25 @@ public class RealNumber {
 //---------ONLY EDIT BELOW THIS LINE------------
 
   public boolean equals(RealNumber other) {
-    double differencePercent = ((other - value) / value);
-    if ((value == 0) && (other == 0)) {
-      return true;
-    }
-    else if (differencePercent <= 0.001) {
-      return true;
-    } else {
-      return false;
-    }
+    double currentVal = getValue();
+    double otherVal = other.getValue();
+    double difference = Math.abs(currentVal - otherVal);
+    return difference <= 1E-5 * (Math.abs(otherVal));
   }
 
   public RealNumber add(RealNumber other) {
-    value = value + other;
-    return null;
+    return new RealNumber(getValue() + other.getValue());
   }
 
   public RealNumber multiply(RealNumber other) {
-    value = value * other;
-    return null;
+    return new RealNumber(getValue() * other.getValue());
   }
 
   public RealNumber divide(RealNumber other) {
-    value = value / other;
-    return null;
+    return new RealNumber(getValue() / other.getValue());
   }
 
   public RealNumber subtract(RealNumber other) {
-    value = value - other;
-    return null;
+    return new RealNumber(getValue() - other.getValue());
   }
 }
