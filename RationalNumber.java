@@ -23,4 +23,8 @@ public class RationalNumber extends RealNumber {
   public int getDenominator() {
     return denominator;
   }
+
+  public RationalNumber reciprocal() {
+    return (denominator / numerator);
+  }
 }
