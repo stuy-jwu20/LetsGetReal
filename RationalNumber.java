@@ -48,9 +48,9 @@ public class RationalNumber extends RealNumber {
     a = Math.abs(a);
     b = Math.abs(b);
     if (a < b) {
-      int c = b;
+      int tempValue = b;
       b = a;
-      a = c;
+      a = tempValue;
     }
     int remainder = a % b;
     while (remainder != 0) {
