@@ -68,4 +68,10 @@ public class RationalNumber extends RealNumber {
     denominator = denominator * other.getDenominator();
     return (numerator / denominator);
   }
+
+  public RationalNumber divide(RationalNumber other) {
+    numerator = numerator * other.getDenominator();
+    denominator = denominator * other.getNumerator();
+    return (numerator / denominator);
+  }
 }
