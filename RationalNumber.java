@@ -55,5 +55,11 @@ public class RationalNumber extends RealNumber {
     if (remainders == 0) {
       System.out.println("" + remainders + " is the GCD of " + a + " and " + b);
     }
+    return remainders;
+  }
+
+  private void reduce() {
+    numerator = (numerator / gcd(a, b));
+    numerator = (denominator / gcd(a, b));
   }
 }
