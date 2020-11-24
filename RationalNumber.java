@@ -88,6 +88,22 @@ public class RationalNumber extends RealNumber {
       other.denominator()) = other.getDenominator() * secondRational;
       numerator = numerator + other.getNumerator;
     }
-    return (numerator/denominator;)
+    return (numerator/denominator);
+  }
+
+  public RationalNumber subtract(RationalNumber other) {
+    if (denominator == other.getDenominator) {
+      numerator += other.getNumerator();
+    } else {
+      double leastMultiple = (multiply(other)) / gcd((numerator/denominator), other);
+      double firstRational = leastMultiple / (numerator/denominator);
+      double secondRational = other / (numerator/denominator);
+      numerator = numerator * firstRational;
+      denominator = denominator * firstRational;
+      other.getNumerator() = other.getNumerator() * secondRational;
+      other.denominator()) = other.getDenominator() * secondRational;
+      numerator = numerator - other.getNumerator;
+    }
+    return (numerator/denominator);
   }
 }
