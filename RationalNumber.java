@@ -62,4 +62,10 @@ public class RationalNumber extends RealNumber {
     numerator = (numerator / gcd(a, b));
     numerator = (denominator / gcd(a, b));
   }
+
+  public RationalNumber multiply(RationalNumber other) {
+    numerator = numerator * other.getNumerator();
+    denominator = denominator * other.getDenominator();
+    return (numerator / denominator);
+  }
 }
