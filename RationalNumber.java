@@ -11,5 +11,8 @@ public class RationalNumber extends RealNumber {
       denominator = deno;
     }
   }
-  
+
+  public double getValue() {
+    return (numerator / denominator);
+  }
 }
