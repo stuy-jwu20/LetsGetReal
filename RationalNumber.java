@@ -1,8 +1,7 @@
-public class RationalNumber extends RealNumber {
+public class RationalNumber extends Number {
   private int numerator, denominator;
 
   public RationalNumber(int nume, int deno) {
-    super(0.0);
     if (deno == 0 || nume == 0) {
       numerator = 0;
       denominator = 1;
@@ -11,14 +10,14 @@ public class RationalNumber extends RealNumber {
       numerator = -nume;
       denominator = -deno;
     } else {
-      numerator = nume;
-      denominator = deno;
+      this.numerator = nume;
+      this.denominator = deno;
     }
     reduce();
   }
 
   public double getValue() {
-    return (numerator / (double)denominator);
+    return (this.numerator / (double)this.denominator);
   }
 
   public int getNumerator() {
@@ -30,7 +29,7 @@ public class RationalNumber extends RealNumber {
   }
 
   public RationalNumber reciprocal() {
-    return new RationalNumber(denominator, numerator);
+    return new RationalNumber(this.denominator, this.numerator);
   }
 
   public boolean equals(RationalNumber other) {
@@ -38,7 +37,14 @@ public class RationalNumber extends RealNumber {
   }
 
   public String toString() {
-    return "" + numerator + "/" + denominator;
+    if (denominator == 1) {
+      return "" + numerator;
+    }
+    else if (numerator == 0) {
+      return "" + 0;
+    } else {
+      return "" + numerator + "/" + denominator;
+    }
   }
 
   public static int gcd(int a, int b) {
@@ -79,7 +85,7 @@ public class RationalNumber extends RealNumber {
     int theGCD = gcd(denominator, other.getDenominator());
     int initialTimes = denominator / theGCD;
     int secondaryTimes = other.getDenominator() / theGCD;
-    return new RationalNumber((numerator * initialTimes) + (other.getNumerator() * secondaryTimes),
+    return new RationalNumber((numerator * secondaryTimes) + (other.getNumerator() * initialTimes),
                               denominator * secondaryTimes);
   }
 
@@ -87,7 +93,7 @@ public class RationalNumber extends RealNumber {
     int theGCD = gcd(denominator, other.getDenominator());
     int initialTimes = denominator / theGCD;
     int secondaryTimes = other.getDenominator() / theGCD;
-    return new RationalNumber((numerator * initialTimes) - (other.getNumerator() * secondaryTimes),
-                              denominator * secondaryTimes);
+    return new RationalNumber((numerator * secondaryTimes) - (other.getNumerator() * initialTimes),
+                               denominator * secondaryTimes);
   }
 }
